@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+dd {
+  margin-left: 1rem !important;
+}
+
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: 0.25;
+}
+
+h1,
+.navbar-brand {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.form-label {
+  float: left;
+}
+
+.container {
+  padding-top: 50px;
+  margin-left: auto;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+}
+
+.characters-grid {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  margin: 0.5rem;
+  text-align: center;
+}
+
+
+.photo img {
+  width: 150px;
+}
+
+.actor-info {
+  padding: 3rem;
+
+}
+
+.blog-cabecera {
+  position: relative;
+  text-align: center;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pquote {
+  float: left;
+  width: 15em;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+
+
+@supports (display: grid) {
+  .cover {
+    background-image: url("../images/street.jpg");
+    background-repeat: no-repeat;
+
+    background-size: 100% 100%;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1.5fr 1.2fr;
+    grid-template-areas:
+      "main main main"
+      "content1 content2 content3";
+    text-align: center;
+  }
+
+  main {
+    grid-area: main;
+  }
+
+
+
+  #content1 {
+    grid-area: content1;
+  }
+
+  #content2 {
+    grid-area: content2;
+  }
+
+  #content3 {
+    grid-area: content3;
+  }
+
+  .grid-content {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  @media only screen and (max-width: 550px) {
+    .cover {
+      grid-template-columns: 1fr;
+      grid-template-rows: 2.2fr 1.2fr 1.2fr 1.2fr;
+      grid-template-areas:
+        "main"
+        "content1"
+        "content2"
+        "content3";
+    }
+  }
+
+}
